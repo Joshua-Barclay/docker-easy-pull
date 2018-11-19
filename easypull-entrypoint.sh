@@ -15,7 +15,7 @@ if [ -z ${1} ]; then
   echo "Exiting.";
   exit 1;
 else
-  echo "VAR $2 = '${1}'";
+  echo "$2 = '${1}'";
 fi
 
 }
@@ -30,7 +30,7 @@ checkVar "${OUTPUT_FILE}" "OUTPUT_FILE" "/tmp/images/busybox.tar"
 # Runtime replacement of configuration prior to launching dockerd #
 ###################################################################
 
-# Replace Insecure Registries - no certficiate verification
+# Replace Insecure Registries - no certificate verification
 sed -i "s/INSECURE_REGS/${INSECURE_REGS}/g" /etc/docker/daemon.json
 
 ###################################################################
